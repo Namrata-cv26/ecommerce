@@ -4,17 +4,18 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ECommerce.model.Category;
-@Repository("categoryDAO")
+
+@Repository
+@SuppressWarnings("deprecation")
 @Transactional
 public class CategoryDAOImpl implements CategoryDAO{
 	@Autowired
-	SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 	
 	@Override
 	public boolean addCategory(Category category) {
@@ -25,7 +26,6 @@ public class CategoryDAOImpl implements CategoryDAO{
 		catch(Exception e) {
 			return false;
 		}
-		
 	}
 
 	@Override
@@ -47,13 +47,13 @@ public class CategoryDAOImpl implements CategoryDAO{
 		}
 		catch(Exception e) {
 			return false;
-		}	}
+		}
+	}
 
 	@Override
 	public List<Category> listCategories() {
-		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
-		Query query = session.createQuery("from Category");
+		org.hibernate.query.Query query = session.createQuery("from Category");
 		List<Category> listCategories = query.list();
 		session.close();
 		return listCategories;
