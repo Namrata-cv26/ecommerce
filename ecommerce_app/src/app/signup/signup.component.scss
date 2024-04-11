@@ -1,51 +1,55 @@
+/* SCSS */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f0f0f0; /* Light gray background */
 }
 
 mat-card {
     max-width: 400px;
     width: 100%;
-    padding: 20px;
-
-    @media screen and (max-width: 500px) {
-        max-width: 90%;
-    }
+    padding: 40px 30px; /* Increased padding for better spacing */
+    background-color: #fff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
 }
 
-mat-card-title{
+mat-card-title {
     text-align: center;
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 20px;
+    color: #333; /* Dark text color */
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-mat-form-field{
+mat-form-field {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 24px; /* Increased margin for better spacing */
 }
 
-button{
-    width: 100%
+button {
+    width: 100%;
 }
 
+/* Styling for smaller screens */
 @media screen and (max-width: 500px) {
     mat-card-title {
-        font-size:20px;
+        font-size: 24px;
     }
-    mat-form-field{
-        margin-bottom: 10px
+    mat-form-field {
+        margin-bottom: 20px;
     }
-    
 }
 
-error-snackbar {
-    background-color: #f44336;
+/* Error message styling */
+mat-error {
+    font-size: 14px;
+    color: #f44336; /* Red error color */
 }
