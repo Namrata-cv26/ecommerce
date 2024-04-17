@@ -1,11 +1,7 @@
-![Header](/Admin/src/main/resources/static/images/ex/JGPS-Git-Banner.gif)
+
 # E-Commerce Using Java Spring Boot
 
-![ GitHub followers ](https://img.shields.io/github/followers/rudradcruze?style=social) ![ GitHub Repo stars ](https://img.shields.io/github/stars/rudradcruze/Jonas-General-Purpose-Shop-SpringBoot?style=social) ![ GitHub repo size ](https://img.shields.io/github/repo-size/rudradcruze/Jonas-General-Purpose-Shop-SpringBoot) ![ YouTube Channel Subscribers ](https://img.shields.io/youtube/channel/subscribers/UCTZN1mzW0AwackW7axf7-OQ?style=social)  [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](/LICENSE)
-
-[Detailed Video on YouTube](https://youtu.be/F4-iNaaumek)
-
-Welcome to the world of Mr. Jonas Kahnwald. Mr. Kahnwald has envisioned a General-Purpose Store that revolutionizes the way people shop in his town. With the aim of providing a seamless shopping experience, he plans to develop an application that allows customers to order products online or purchase them directly from the store. This application will offer a wide range of product categories, including Grocery Items, Electronic Items, Sports Items, Cosmetics, and a Miscellaneous category for unique items.
+. With the aim of providing a seamless shopping experience, he plans to develop an application that allows customers to order products online or purchase them directly from the store. This application will offer a wide range of product categories, including Grocery Items, Electronic Items, Sports Items, Cosmetics, and a Miscellaneous category for unique items.
 
 In this scenario, we will explore the theoretical aspects and practical implementation of Mr. Kahnwald's vision. We will delve into the world of object-oriented concepts, logical class identification, relationships among classes, and the application of the Model-View-Controller (MVC) pattern to develop the system.
 
