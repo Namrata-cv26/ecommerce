@@ -41,8 +41,8 @@
                                             <a href="#" class="medium text-muted m-0 p-0" th:text="${session.username != null} ? ${session.username} : 'Sign In / Register'"></a>
                                             <ul class="nav-dropdown nav-submenu">
                                                 <li th:if = "${session.username == null}" ><a th:href="@{/login}">Sign in</a></li>
+                                                <li th:if = "${session.username == null}" ><a th:href="@{/register}">Sign up</a></li>
                                                 <li th:if = "${session.username != null}"><a th:href="@{/logout}">Sign Out</a></li>
-                                                <li><a th:href="@{/register}">Sign Up</a></li>
                                             </ul>
                                         </li>
                                     </ul>
