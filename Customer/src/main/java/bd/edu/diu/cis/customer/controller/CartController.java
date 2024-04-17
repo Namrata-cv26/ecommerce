@@ -85,7 +85,7 @@ public class CartController {
             Customer customer = customerService.findByUsername(username);
             Product product = productService.getProductById(productId);
             ShoppingCart cart = cartService.updateItemInCart(product, quantity, customer);
-
+            System.out.println(quantity);
             model.addAttribute("shoppingCart", cart);
             return "redirect:/cart";
         }

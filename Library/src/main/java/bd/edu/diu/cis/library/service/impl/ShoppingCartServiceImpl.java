@@ -143,4 +143,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
         return totalPrice;
     }
+
+
 }

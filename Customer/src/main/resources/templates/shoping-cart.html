@@ -68,7 +68,7 @@
 												<td class="fs-md text-dark mb-3 lh-1"><p th:text="'Rs. ' + ${cartItem.totalPrice}"></p></td>
 												<td class="remove-pr">
 													<button type="submit" name="action" value="update" title="Update" class="btn stretched-link borders btn-sm">Update</button>
-													<button type="submit" name="action" value="delete" title="Delete" class="btn theme-bg rounded text-light">Remove</button>
+													<button type="submit" name="action" value="delete" title="Delete" class="btn theme-bg rounded text-light" >Remove</button>
 												</td>
 											</form>
 										</tr>
@@ -94,7 +94,11 @@
 								</div>
 							</div>
 
-							<a class="btn btn-block btn-dark mb-3" th:href="@{/check-out}">Proceed to Checkout</a>
+
+
+							<a th:if="${subTotal != null}" class="btn btn-block btn-dark mb-3" th:href="@{/check-out}">Proceed to Checkout</a>
+
+
 
 							<a class="btn-link text-dark ft-medium" th:href="@{/products}">
 								<i class="ti-back-left mr-2"></i> Continue Shopping

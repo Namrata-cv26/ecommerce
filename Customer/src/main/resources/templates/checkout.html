@@ -113,7 +113,9 @@
 								</ul>
 							  </div>
 							</div>
-							<a class="btn btn-block btn-dark mb-3" th:href="@{/save-order}">Place Your Order</a>
+							<a th:if="${cart.totalPrices != 0}" class="btn btn-block btn-dark mb-3" th:href="@{/save-order}">Place Your Order</a>
+							<a th:if="${cart.totalPrices == 0}" class="btn btn-block btn-dark mb-3" style="background-color: grey; color: white; cursor: not-allowed;">Place Your Order</a>
+
 						</div>
 					</div>
 					
