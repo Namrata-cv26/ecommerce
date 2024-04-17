@@ -59,13 +59,13 @@
 												</a>
 												<p class="p-0 m-0" th:text="${cartItem.product.category.name}"></p>
 											</td>
-											<td><h4 class="fs-md text-dark mb-3 lh-1 text-muted" th:text="'$' + ${cartItem.product.salePrice}"></h4></td>
+											<td><h4 class="fs-md text-dark mb-3 lh-1 text-muted" th:text="'Rs. ' + ${cartItem.product.salePrice}"></h4></td>
 											<form th:action="@{/update-cart}" method="post">
 												<input type="hidden" name="id" th:value="${cartItem.product.id}">
 												<td class="quantity-box">
 													<input type="number" size="4" th:value="${cartItem.quantity}" name="quantity" min="0" step="1" class="c-input-text qty text form-control">
 												</td>
-												<td class="fs-md text-dark mb-3 lh-1"><p th:text="'$' + ${cartItem.totalPrice}"></p></td>
+												<td class="fs-md text-dark mb-3 lh-1"><p th:text="'Rs. ' + ${cartItem.totalPrice}"></p></td>
 												<td class="remove-pr">
 													<button type="submit" name="action" value="update" title="Update" class="btn stretched-link borders btn-sm">Update</button>
 													<button type="submit" name="action" value="delete" title="Delete" class="btn theme-bg rounded text-light">Remove</button>
@@ -81,13 +81,14 @@
 								<div class="card-body">
 									<ul class="list-group list-group-sm list-group-flush-y list-group-flush-x">
 										<li class="list-group-item d-flex text-dark fs-sm ft-regular">
-											<span>Subtotal</span> <span th:if="${subTotal != null}"  th:text = "'$' + ${subTotal}" class="ml-auto text-dark ft-medium"></span>
+											<span>Subtotal</span> <span th:if="${subTotal != null}"  th:text = "'Rs. ' + ${subTotal}" class="ml-auto text-dark ft-medium"></span>
 										</li>
 										<li class="list-group-item d-flex text-dark fs-sm ft-regular">
-											<span>Discount: </span> <span th:if="${discountPrice != null}" th:text="'$' + ${discountPrice}" class="ml-auto text-dark ft-medium"></span>
+											<span>Discount: </span> <span th:if="${discountPrice != null}" th:text="'Rs. ' + ${discountPrice}" class="ml-auto text-dark ft-medium"></span>
 										</li>
 										<li class="list-group-item d-flex text-dark fs-sm ft-regular">
-											<span>Grand Total</span> <span th:if="${subTotal != null}" th:text = " '$' + ${subTotal - discountPrice}" class="ml-auto text-dark ft-medium"></span>
+											<span>Grand Total</span> <span th:if="${subTotal != null}" th:text = " 'Rs.
+											' + ${subTotal - discountPrice}" class="ml-auto text-dark ft-medium"></span>
 										</li>
 									</ul>
 								</div>

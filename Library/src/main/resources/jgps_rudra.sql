@@ -39,7 +39,7 @@ CREATE TABLE `admins` (
 
 LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES (1,'Francis Rura',NULL,'D Cruze','$2a$10$wckWJoohCVSjt9ytCOTLx.wKNur6bldxO/JFz3VdFG6/Y8/yRFiGu','francisrudra@gmail.com');
+INSERT INTO `admins` VALUES (1,'Disha',NULL,'M','$2a$10$wckWJoohCVSjt9ytCOTLx.wKNur6bldxO/JFz3VdFG6/Y8/yRFiGu','disha@gmail.com');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Grocery Items',_binary '',_binary '\0','Grocery'),(2,'Electronic Items',_binary '',_binary '\0','Electronic'),(3,'Sports Items',_binary '',_binary '\0','Sports'),(4,'Cosmetics Items',_binary '',_binary '\0','Cosmetics'),(5,'Miscellaneous Items',_binary '',_binary '\0','Miscellaneous');
+INSERT INTO `categories` VALUES (1,'Laptop',_binary '',_binary '\0','Grocery'),(2,'Electronic Items',_binary '',_binary '\0','Electronic'),(3,'Sports Items',_binary '',_binary '\0','Sports'),(4,'Cosmetics Items',_binary '',_binary '\0','Cosmetics'),(5,'Miscellaneous Items',_binary '',_binary '\0','Miscellaneous');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
