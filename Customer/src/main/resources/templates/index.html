@@ -26,7 +26,7 @@
 							<div class="killore--block-link-content">
 								<ul>
 									<li th:each="category : ${categoriesSeperate}">
-										<a th:href = "@{/products-in-category/{id}(id = ${category.categoryId})}">[[${category.categoryName}]] <i class="lni lni-arrow-right ml-2"></i> <span>[[${category.numberOfProduct}]]</span></a>
+										[[${category.categoryName}]] <i class="lni lni-arrow-right ml-2"></i> <span>[[${category.numberOfProduct}]]</span>
 									</li>
 								</ul>
 							</div>
