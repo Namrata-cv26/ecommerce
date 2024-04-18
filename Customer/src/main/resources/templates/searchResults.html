@@ -1,0 +1,128 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Search Results</title>-->
+<!--    <link rel="stylesheet" href="path/to/your/css/file.css">-->
+<!--    &lt;!&ndash; Include any necessary CSS files for styling &ndash;&gt;-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--&lt;!&ndash; Include any necessary header content here &ndash;&gt;-->
+
+<!--<div class="container">-->
+<!--    <h1>Search Results</h1>-->
+<!--    <div th:if="${searchResults.empty}">-->
+<!--        <p>No results found.</p>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        &lt;!&ndash; Iterate over each product in the search results &ndash;&gt;-->
+<!--        <div th:each="product : ${searchResults.content}" class="col-md-4">-->
+<!--            <div class="product-card">-->
+<!--                &lt;!&ndash; Display product image &ndash;&gt;-->
+<!--                <img th:src="${'data:image/jpeg;base64,' + product.image}" alt="Product Image" class="product-image">-->
+<!--                &lt;!&ndash; Display product name &ndash;&gt;-->
+<!--                <h2 th:text="${product.name}" class="product-name"></h2>-->
+<!--                &lt;!&ndash; Display product description &ndash;&gt;-->
+<!--                <p th:text="${product.description}" class="product-description"></p>-->
+<!--                &lt;!&ndash; Add any additional product information or buttons here &ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Include any necessary footer content here &ndash;&gt;-->
+
+<!--&lt;!&ndash; Include any necessary JavaScript files here &ndash;&gt;-->
+
+<!--</body>-->
+
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="fragmenta :: head-link"></head>
+
+<body>
+
+<div th:replace="fragmenta :: preloader"></div>
+
+<div id="main-wrapper">
+
+    <div th:replace="fragmenta :: top-header"></div>
+
+    <div th:replace="fragmenta :: title-menu"></div>
+
+    <!-- End Navigation -->
+    <div class="clearfix"></div>
+
+    <!-- Search Results Section -->
+    <div class="container">
+        <h1>Search Results</h1>
+        <div th:if="${searchResults.empty}">
+            <p>No results found.</p>
+        </div>
+        <div class="row">
+            <!-- Iterate over each product in the search results -->
+            <div th:each="product : ${searchResults.content}" class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="product_grid card b-0">
+                    <input type="hidden" th:value="${product.id}" name="id">
+                    <div class="badge bg-info text-white position-absolute ft-regular ab-left text-upper"><span th:text="${product.category.name}"></span></div>
+                    <div class="card-body p-0">
+                        <div class="shop_thumb position-relative custom-overflow-hidden">
+                            <a class="card-img-top d-block overflow-hidden ovr-hide" th:href="@{/find-product/{id}(id = ${product.id})}">
+                                <img class="card-img-top" th:src="*{'data:image/jpeg;base64,' + product.image}" th:alt="${product.name}">
+                            </a>
+                            <a class="card-img-top d-block overflow-hidden ovr-show" th:href="@{/find-product/{id}(id = ${product.id})}">
+                                <img class="card-img-top custom-product-hover" th:src="*{'data:image/jpeg;base64,' + product.image}" alt="...">
+                            </a>
+                            <div class="product-hover-overlay btn d-flex align-items-center justify-content-center">
+                                <div class="group_btn">
+                                    <a href="#" data-toggle="modal" data-target="#quickview" class="prd_btn_square">
+                                        <i class="ti-fullscreen"></i>
+                                    </a>
+                                    <button th:if="${session.username != null}" type="submit" class="prd_btn_square" data-toggle="tooltip" data-placement="top" title="Add To Cart">
+                                        <i class="lni lni-shopping-basket"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer b-0 p-3 pb-0 bg-white d-flex align-items-start justify-content-center">
+                        <div class="text-left">
+                            <div class="text-left">
+                                <div class="elso_titl">
+                                    <span class="small" th:text="${product.category.name}"></span>
+                                </div>
+                                <h5 class="fs-md mb-0 lh-1">
+                                    <a href="shop-single-v1.html" th:text="${product.name}"></a>
+                                </h5>
+                                <div class="elis_rty">
+                                    <span class="ft-bold text-dark fs-sm" th:text="'$' + ${product.costPrice}"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Search Results Section -->
+
+    <!-- Include other sections as needed -->
+
+    <footer th:replace="fragmenta :: footer"></footer>
+
+    <!-- Include other modals and scripts here -->
+
+</div>
+
+<div th:replace="fragmenta :: scripts"></div>
+
+</body>
+
+</html>

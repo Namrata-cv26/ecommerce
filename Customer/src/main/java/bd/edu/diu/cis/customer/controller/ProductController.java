@@ -1,14 +1,17 @@
 package bd.edu.diu.cis.customer.controller;
 import bd.edu.diu.cis.library.dto.CategoryDto;
+import bd.edu.diu.cis.library.dto.ProductDto;
 import bd.edu.diu.cis.library.model.Category;
 import bd.edu.diu.cis.library.model.Product;
 import bd.edu.diu.cis.library.service.CategoryService;
 import bd.edu.diu.cis.library.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -75,6 +78,29 @@ public class ProductController {
         model.addAttribute("products", products);
         model.addAttribute("categories", categories);
         return "filter-low-price";
+    }
+
+    @GetMapping("/search")
+    public String searchProducts(
+            @RequestParam(name = "page", defaultValue = "0") int pageNumber,
+            @RequestParam(name = "keyword") String keyword,
+            Model model) {
+
+        // Call the searchProductsList method from productService
+        // and add the search results to the model
+        Page<ProductDto> searchResults = productService.searchProductsList(pageNumber, keyword);
+        model.addAttribute("searchResults", searchResults);
+
+        // Return the view name for the search results page
+        return "searchResults";
+    }
+
+
+    // Helper method to convert Page<ProductDto> to String
+    private String convertPageToString(Page<ProductDto> page) {
+        // Your conversion logic here
+        // This is just a placeholder, you need to implement your own logic
+        return "Search results: " + page.getContent().toString();
     }
 
 }

@@ -37,4 +37,7 @@ public interface ProductService {
     List<Product> filterHighPrice();
 
     List<Product> filterLowPrice();
+
+    Page<ProductDto> searchProductsList(int pageNo, String keyword);
+
 }

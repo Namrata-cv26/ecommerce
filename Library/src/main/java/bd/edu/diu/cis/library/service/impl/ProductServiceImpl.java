@@ -218,4 +218,12 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.filterLowPrice();
     }
 
+    @Override
+    public Page<ProductDto> searchProductsList(int pageNo, String keyword) {
+        Pageable pageable = PageRequest.of(pageNo, 5);
+        List<ProductDto> productDtoList = transfer(productRepository.searchProductsList(keyword));
+        Page products = toPage(productDtoList, pageable);
+        return products;
+    }
+
 }
