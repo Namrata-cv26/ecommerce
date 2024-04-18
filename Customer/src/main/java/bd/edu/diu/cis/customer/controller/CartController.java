@@ -17,6 +17,9 @@ import java.security.Principal;
 
 @Controller
 public class CartController {
+
+    private static CartController instance;
+
     @Autowired
     private CustomerService customerService;
 
@@ -26,9 +29,19 @@ public class CartController {
     @Autowired
     private ProductService productService;
 
+    // Private constructor to prevent instantiation
+    private CartController() {}
+
+    // Static method to get the instance of CartController
+    public static synchronized CartController getInstance() {
+        if (instance == null) {
+            instance = new CartController();
+        }
+        return instance;
+    }
+
     @GetMapping("/cart")
     public String cart(Model model, Principal principal, HttpSession session){
-
         if(principal == null){
             return "redirect:/login";
         }
@@ -85,7 +98,7 @@ public class CartController {
             Customer customer = customerService.findByUsername(username);
             Product product = productService.getProductById(productId);
             ShoppingCart cart = cartService.updateItemInCart(product, quantity, customer);
-            System.out.println(quantity);
+
             model.addAttribute("shoppingCart", cart);
             return "redirect:/cart";
         }

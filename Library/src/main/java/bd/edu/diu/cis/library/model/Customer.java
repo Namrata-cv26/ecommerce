@@ -21,9 +21,9 @@ public class Customer {
     @Column(name = "customer_id")
     private Long id;
 
-    @Size(min = 3, max = 15, message = "First name should have 3-15 characters")
+    @Size(min = 1, max = 15, message = "First name should have 3-15 characters")
     private String firstName;
-    @Size(min = 3, max = 15, message = "Last name should have 3-15 characters")
+    @Size(min = 1, max = 15, message = "Last name should have 3-15 characters")
     private String lastName;
     private String username;
     private String country;
