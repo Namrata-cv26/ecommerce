@@ -76,7 +76,7 @@ public class CartController {
                              @RequestParam("id") Long productId,
                              Model model,
                              Principal principal
-                             ){
+    ){
 
         if(principal == null){
             return "redirect:/login";

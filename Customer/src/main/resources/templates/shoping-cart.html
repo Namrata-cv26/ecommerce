@@ -96,7 +96,8 @@
 
 
 
-							<a th:if="${subTotal != null}" class="btn btn-block btn-dark mb-3" th:href="@{/check-out}">Proceed to Checkout</a>
+							<a th:if="${subTotal != null}" th:unless="${shoppingCart == null}" class="btn btn-block btn-dark mb-3" th:href="@{/check-out}">Proceed to Checkout</a>
+
 
 
 
@@ -649,6 +650,33 @@
 			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
 		</div>
 		<div th:replace="fragmenta :: scripts"></div>
+
+<script th:inline="javascript">
+	/*<![CDATA[*/
+    document.addEventListener("DOMContentLoaded", function() {
+        // Function to check grand total and disable checkout button if necessary
+        function checkGrandTotal() {
+            // Get the grand total value
+            var grandTotal = parseFloat(document.querySelector('.list-group-item:nth-child(3) span:nth-child(2)').innerText.replace('Rs. ', ''));
+
+            // Get the checkout button
+            var checkoutButton = document.querySelector('a.btn.btn-block.btn-dark.mb-3');
+
+            // Check if grand total is 0.0
+            if (grandTotal === 0.0) {
+                // Disable the checkout button
+                checkoutButton.setAttribute('disabled', 'disabled');
+            } else {
+                // Enable the checkout button
+                checkoutButton.removeAttribute('disabled');
+            }
+        }
+
+        // Call the function initially to set button state correctly
+        checkGrandTotal();
+    });
+    /*]]>*/
+	</script>
 
 </body>
 </html>
