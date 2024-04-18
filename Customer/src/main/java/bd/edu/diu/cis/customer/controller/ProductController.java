@@ -80,6 +80,8 @@ public class ProductController {
         return "filter-low-price";
     }
 
+
+    //Search for products
     @GetMapping("/search")
     public String searchProducts(
             @RequestParam(name = "page", defaultValue = "0") int pageNumber,
@@ -98,8 +100,7 @@ public class ProductController {
 
     // Helper method to convert Page<ProductDto> to String
     private String convertPageToString(Page<ProductDto> page) {
-        // Your conversion logic here
-        // This is just a placeholder, you need to implement your own logic
+        // This is just a placeholder
         return "Search results: " + page.getContent().toString();
     }
 

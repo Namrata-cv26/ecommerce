@@ -27,17 +27,20 @@ public class CustomerDetails implements UserDetails {
     }
 
     @Override
-    public String getUsername() {
+    public String getUsername()
+    {
         return customer.getUsername();
     }
 
     @Override
-    public boolean isAccountNonExpired() {
+    public boolean isAccountNonExpired()
+    {
         return true;
     }
 
     @Override
-    public boolean isAccountNonLocked() {
+    public boolean isAccountNonLocked()
+    {
         return true;
     }
 
