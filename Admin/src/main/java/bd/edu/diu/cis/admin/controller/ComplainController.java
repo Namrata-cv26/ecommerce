@@ -12,7 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
 import java.util.List;
-
+/*
 @Controller
 public class ComplainController {
 
@@ -40,6 +40,30 @@ public class ComplainController {
         if (principal == null)
             return "redirect:/login";
 
+        complainService.updateStatus(id);
+        attributes.addFlashAttribute("success", "Your Complain Status is updated successfully!");
+        return "redirect:/complains";
+    }
+}
+*/
+
+@Controller
+public class ComplainController {
+
+    @Autowired
+    private ComplainService complainService;
+
+    @GetMapping("/complains")
+    public String getComplains(Model model) {
+        List<Complain> complains = complainService.listAll();
+        model.addAttribute("complains", complains);
+        model.addAttribute("title", "All Complains");
+        model.addAttribute("size", complains.size());
+        return "complains";
+    }
+
+    @RequestMapping("/complain-update-status/{id}")
+    public String complainUpdateStatus(@PathVariable("id") long id, RedirectAttributes attributes) {
         complainService.updateStatus(id);
         attributes.addFlashAttribute("success", "Your Complain Status is updated successfully!");
         return "redirect:/complains";
