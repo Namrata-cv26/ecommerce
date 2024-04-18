@@ -15,7 +15,7 @@
 
 	<!-- End Navigation -->
 	<div class="clearfix"></div>
-			
+
 			<!-- ======================= Shop Style 1 ======================== -->
 			<section class="bg-cover" style="background: url(../assets/images/banner-2.png) no-repeat;">
 				<div class="container">
@@ -89,9 +89,9 @@
 													</a>
 													<div class="product-hover-overlay btn d-flex align-items-center justify-content-center">
 														<div class="group_btn">
-															<a href="#" data-toggle="modal" data-target="#quickview" class="prd_btn_square">
-																<i class="ti-fullscreen"></i>
-															</a>
+<!--															<a href="#" data-toggle="modal" data-target="#quickview" class="prd_btn_square">-->
+<!--																<i class="ti-fullscreen"></i>-->
+<!--															</a>-->
 															<button th:if = "${session.username != null}" type="submit" class="prd_btn_square" data-toggle="tooltip" data-placement="top" title="Add To Cart">
 																<i class="lni lni-shopping-basket"></i>
 															</button>
@@ -177,13 +177,13 @@
 				</div>
 			</section>
 
-			
+
 			<!-- ======================= Customer Features ======================== -->
 			<section th:replace="fragmenta :: features"></section>
 			<!-- ======================= Customer Features ======================== -->
 
 			<footer th:replace="fragmenta :: footer"></footer>
-			
+
 			<!-- Product View Modal -->
 			<div class="modal fade lg-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickviewmodal" aria-hidden="true">
 				<div class="modal-dialog modal-xl login-pop-form" role="document">
@@ -193,10 +193,10 @@
 							  <span class="ti-close"></span>
 							</button>
 						  </div>
-					
+
 						<div class="modal-body">
 							<div class="quick_view_wrap">
-					
+
 								<div class="quick_view_thmb">
 									<div class="quick_view_slide">
 										<div class="single_view_slide"><img src="assets/images/product/1.jpg" class="img-fluid" alt="" /></div>
@@ -205,10 +205,10 @@
 										<div class="single_view_slide"><img src="assets/images/product/4.jpg" class="img-fluid" alt="" /></div>
 									</div>
 								</div>
-								
+
 								<div class="quick_view_capt">
 									<div class="prd_details">
-										
+
 										<div class="prt_01 mb-1"><span class="text-light bg-info rounded px-2 py-1">Dresses</span></div>
 										<div class="prt_02 mb-2">
 											<h2 class="ft-bold mb-1">Women Striped Shirt Dress</h2>
@@ -224,11 +224,11 @@
 												<div class="elis_rty"><span class="ft-medium text-muted line-through fs-md mr-2">$199</span><span class="ft-bold theme-cl fs-lg mr-2">$110</span><span class="ft-regular text-danger bg-light-danger py-1 px-2 fs-sm">Out of Stock</span></div>
 											</div>
 										</div>
-										
+
 										<div class="prt_03 mb-3">
 											<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
 										</div>
-										
+
 										<div class="prt_04 mb-2">
 											<p class="d-flex align-items-center mb-0 text-dark ft-medium">Color:</p>
 											<div class="text-left">
@@ -258,7 +258,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="prt_04 mb-4">
 											<p class="d-flex align-items-center mb-0 text-dark ft-medium">Size:</p>
 											<div class="text-left pb-0 pt-2">
@@ -292,7 +292,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="prt_05 mb-4">
 											<div class="form-row mb-7">
 												<div class="col-12 col-lg-auto">
@@ -308,7 +308,7 @@
 												<div class="col-12 col-lg">
 													<!-- Submit -->
 													<button type="submit" class="btn btn-block custom-height bg-dark mb-2">
-														<i class="lni lni-shopping-basket mr-2"></i>Add to Cart 
+														<i class="lni lni-shopping-basket mr-2"></i>Add to Cart
 													</button>
 												</div>
 												<div class="col-12 col-lg-auto">
@@ -319,7 +319,7 @@
 												</div>
 										  </div>
 										</div>
-										
+
 										<div class="prt_06">
 											<p class="mb-0 d-flex align-items-center">
 											  <span class="mr-4">Share:</span>
@@ -334,7 +334,7 @@
 											  </a>
 											</p>
 										</div>
-										
+
 									</div>
 								</div>
 							</div>
@@ -404,7 +404,7 @@
 						<button onclick="closeWishlist()" class="close_slide"><i class="ti-close"></i></button>
 					</div>
 					<div class="right-ch-sideBar">
-						
+
 						<div class="cart_select_items py-2">
 							<!-- Single Item -->
 							<div class="d-flex align-items-center justify-content-between br-bottom px-3 py-3">
@@ -420,7 +420,7 @@
 								</div>
 								<div class="fls_last"><button class="close_slide gray"><i class="ti-close"></i></button></div>
 							</div>
-							
+
 							<!-- Single Item -->
 							<div class="d-flex align-items-center justify-content-between br-bottom px-3 py-3">
 								<div class="cart_single d-flex align-items-center">
@@ -435,7 +435,7 @@
 								</div>
 								<div class="fls_last"><button class="close_slide gray"><i class="ti-close"></i></button></div>
 							</div>
-							
+
 							<!-- Single Item -->
 							<div class="d-flex align-items-center justify-content-between px-3 py-3">
 								<div class="cart_single d-flex align-items-center">
@@ -450,14 +450,14 @@
 								</div>
 								<div class="fls_last"><button class="close_slide gray"><i class="ti-close"></i></button></div>
 							</div>
-							
+
 						</div>
-						
+
 						<div class="d-flex align-items-center justify-content-between br-top br-bottom px-3 py-3">
 							<h6 class="mb-0">Subtotal</h6>
 							<h3 class="mb-0 ft-medium">$417</h3>
 						</div>
-						
+
 						<div class="cart_action px-3 py-3">
 							<div class="form-group">
 								<button type="button" class="btn d-block full-width btn-dark">Move To Cart</button>
@@ -466,11 +466,11 @@
 								<button type="button" class="btn d-block full-width btn-dark-light">Edit or View</button>
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
-			
+
 			<!-- Cart -->
 			<div class="w3-ch-sideBar w3-bar-block w3-card-2 w3-animate-right" style="display:none;right:0;" id="Cart">
 				<div class="rightMenu-scroll">
@@ -479,7 +479,7 @@
 						<button onclick="closeCart()" class="close_slide"><i class="ti-close"></i></button>
 					</div>
 					<div class="right-ch-sideBar">
-						
+
 						<div class="cart_select_items py-2">
 							<!-- Single Item -->
 							<div class="d-flex align-items-center justify-content-between br-bottom px-3 py-3">
@@ -495,7 +495,7 @@
 								</div>
 								<div class="fls_last"><button class="close_slide gray"><i class="ti-close"></i></button></div>
 							</div>
-							
+
 							<!-- Single Item -->
 							<div class="d-flex align-items-center justify-content-between br-bottom px-3 py-3">
 								<div class="cart_single d-flex align-items-center">
@@ -510,7 +510,7 @@
 								</div>
 								<div class="fls_last"><button class="close_slide gray"><i class="ti-close"></i></button></div>
 							</div>
-							
+
 							<!-- Single Item -->
 							<div class="d-flex align-items-center justify-content-between px-3 py-3">
 								<div class="cart_single d-flex align-items-center">
@@ -525,14 +525,14 @@
 								</div>
 								<div class="fls_last"><button class="close_slide gray"><i class="ti-close"></i></button></div>
 							</div>
-							
+
 						</div>
-						
+
 						<div class="d-flex align-items-center justify-content-between br-top br-bottom px-3 py-3">
 							<h6 class="mb-0">Subtotal</h6>
 							<h3 class="mb-0 ft-medium">$1023</h3>
 						</div>
-						
+
 						<div class="cart_action px-3 py-3">
 							<div class="form-group">
 								<button type="button" class="btn d-block full-width btn-dark">Checkout Now</button>
@@ -541,13 +541,13 @@
 								<button type="button" class="btn d-block full-width btn-dark-light">Edit or View</button>
 							</div>
 						</div>
-						
+
 					</div>
-				</div>
+				</div>f
 			</div>
-			
+
 			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
-			
+
 
 		</div>
 
