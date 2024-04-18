@@ -11,6 +11,8 @@ import bd.edu.diu.cis.library.repository.ShoppingCartRepository;
 import bd.edu.diu.cis.library.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import bd.edu.diu.cis.library.dto.ProductDto;
+import bd.edu.diu.cis.library.model.Product;
 
 import java.util.*;
 
@@ -30,6 +32,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private CartItemRepository cartItemRepository;
+
+    private ProductServiceImpl productService;
 
     @Override
     public List<Order> listAll() {
@@ -63,14 +67,27 @@ public class OrderServiceImpl implements OrderService {
             orderDetail.setUnitPrice(item.getProduct().getSalePrice());
             orderDetailRepository.save(orderDetail);
             cartItemRepository.delete(item);
+
+
+            Product product=item.getProduct();
+            int quantity=item.getQuantity();
+            int actual=product.getCurrentQuantity();
+            product.setCurrentQuantity(actual-quantity);
+            System.out.println(product.getCurrentQuantity());
+
+
+
         }
 
         order.setOrderDetailList(orderDetailList);
+
         cart.setCartItem(new HashSet<>());
         cart.setTotalPrices(0);
         cart.setTotalPrices(0);
         cartRepository.save(cart);
         orderRepository.save(order);
+
+
 //        cartRepository.deleteById(cart.getId());
     }
 
@@ -79,6 +96,7 @@ public class OrderServiceImpl implements OrderService {
         Order order = orderRepository.getById(id);
         order.setOrderStatus("ACCEPTED");
         orderRepository.save(order);
+
     }
 
     @Override
