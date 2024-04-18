@@ -17,7 +17,7 @@
         <div id="top" class="sa-app__body">
             <div class="mx-sm-2 px-2 px-sm-3 px-xxl-4 pb-6">
                 <div class="container container--max--xl">
-                    <form th:action="@{/saveCategory}" th:object="${categoryNew}" method="post">
+                    <form id="categoryForm" th:action="@{/saveCategory}" th:object="${categoryNew}" method="post" onsubmit="return validateForm()">
                         <div class="py-5">
                             <div class="row g-4 align-items-center">
                                 <div class="col">
@@ -42,8 +42,7 @@
                                                 <input required th:field="*{name}" name="name" type="text" class="form-control" id="name"/>
                                             </div>
                                             <div class="mb-4">
-                                                <label for="description"
-                                                       class="form-label">Description</label>
+                                                <label for="description" class="form-label">Description</label>
                                                 <textarea required th:field="*{description}" name="description" id="description" class="form-control" rows="8"></textarea>
                                             </div>
                                         </div>
@@ -56,7 +55,7 @@
                                                 <h2 class="mb-0 fs-exact-18">Image</h2>
                                             </div>
                                             <div class="mt-4 mb-n2">
-                                                <input type="file" name="productImage" id="">
+                                                <input type="file" name="productImage" id="productImage">
                                             </div>
                                         </div>
                                     </div>
@@ -72,6 +71,20 @@
     </div>
     <div class="sa-app__toasts toast-container bottom-0 end-0"></div>
 </div>
-    <div th:replace="fregments :: scripts"></div>
+<div th:replace="fregments :: scripts"></div>
+
+<script>
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var description = document.getElementById("description").value;
+        var image = document.getElementById("productImage").value;
+
+        if (name == "" || description == "" || image == "") {
+            alert("Please fill out all fields.");
+            return false;
+        }
+        return true;
+    }
+</script>
 </body>
 </html>
