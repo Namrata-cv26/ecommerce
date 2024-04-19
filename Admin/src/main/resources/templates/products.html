@@ -80,7 +80,8 @@
                                             <td th:text="${product.category.name}"></td>
                                             <td th:text="${product.salePrice}"></td>
                                             <td th:text="${product.costPrice}"></td>
-                                            <td th:text="${product.currentQuantity}"></td>
+                                            <td th:if="${product.currentQuantity==0}">Out of stock</td>
+                                            <td th:if="${product.currentQuantity!=0}" th:text="${product.currentQuantity}"></td>
                                             <td>
                                                 <img src="" style="height: auto; width: 50px;" th:src = "*{'data:image/jpeg;base64,' + {product.image}}" th:alt="${product.name}">
                                             </td>

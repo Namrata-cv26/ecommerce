@@ -36,7 +36,7 @@
 								</select>
 
 								<label for="transitionId" class="form-label">Transaction Id</label>
-								<input style="width: 100%" id="transitionId" th:field="*{transitionId}" name="transitionId" class="form-control" />
+								<input style="width: 100%" id="transitionId" th:field="*{transitionId}" name="transitionId" class="form-control" th:disabled="${paymentType == 'CASH'}"/>
 							</div>
 
 							<div class="mb-4">
