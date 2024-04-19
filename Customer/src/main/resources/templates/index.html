@@ -155,12 +155,12 @@
 										<div class="product-left-hover-overlay">
 											<ul class="left-over-buttons">
 												<li>
-													<a th:href = "@{/find-product/{id}(id = ${product.id})}" class="d-inline-flex circle align-items-center justify-content-center">
+													<a th:if="${product.getCurrentQuantity()!=0}" th:href = "@{/find-product/{id}(id = ${product.id})}" class="d-inline-flex circle align-items-center justify-content-center">
 														<i class="fas fa-expand-arrows-alt position-absolute"></i>
 													</a>
 												</li>
 												<li th:if = "${session.username != null}">
-													<button type="submit" class="d-inline-flex circle align-items-center justify-content-center snackbar-addcart">
+													<button th:if="${product.getCurrentQuantity()!=0}" type="submit" class="d-inline-flex circle align-items-center justify-content-center snackbar-addcart">
 														<i class="fas fa-shopping-basket position-absolute"></i>
 													</button>
 												</li>
